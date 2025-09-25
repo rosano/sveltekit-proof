@@ -6,6 +6,6 @@ export default defineConfig({
 		port: 4173
 	},
 	testDir: 'src/routes',
-	testMatch: '**/ui-test.js',
+	testMatch: '**/tests-ui.js',
 	outputDir: '__playwright',
 });
