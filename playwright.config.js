@@ -5,6 +5,7 @@ export default defineConfig({
 		command: 'npm run build && npm run preview',
 		port: 4173
 	},
-	testDir: 'e2e',
+	testDir: 'src/routes',
+	testMatch: '**/ui-test.js',
 	outputDir: '__playwright',
 });
