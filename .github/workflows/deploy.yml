@@ -16,6 +16,9 @@ jobs:
           cache: npm
           cache-dependency-path: package.json
 
+      - name: Install dependencies
+        run: npm i
+
       - name: Cache Playwright
         uses: actions/cache@v3
         id: playwright-cache
@@ -28,9 +31,6 @@ jobs:
       - name: Install Playwright Browsers
         if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps chromium
-
-      - name: Install dependencies
-        run: npm i
 
       - name: build
         env:
