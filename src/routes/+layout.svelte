@@ -12,4 +12,14 @@ let { children } = $props();
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
+<header>
+	<nav>
+		<a href="/">home</a>
+		•
+		<a href="/guide">guide</a>
+		•
+		<a href="/redirect">redirect</a>
+	</nav>
+</header>
+
 {@render children?.()}
