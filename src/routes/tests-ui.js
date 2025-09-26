@@ -2,9 +2,9 @@ import { expect, test } from '@playwright/test';
 
 test.beforeEach(({ page }) => page.goto('/'));
 
-test('home page has expected h1', async ({ page }) => {
-	await expect(page.locator('h1')).toContainText('test-sveltekit');
-});
+test('home page has expected h1', ({ page }) =>
+	expect(page.locator('h1')).toContainText('test-sveltekit')
+);
 
 test('navigation items', async ({ page }) => {
 	await expect(page.locator('nav a:nth-child(1)')).toBeVisible();
