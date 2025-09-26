@@ -1,8 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-test.beforeEach(async ({ page }) => {
-  await page.goto('/app1');
-});
+test.beforeEach(({ page }) => page.goto('/app1'));
 
 test('page has h1', async ({ page }) => {
 	await expect(page.locator('h1')).toContainText('SPA');
