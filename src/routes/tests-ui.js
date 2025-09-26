@@ -13,4 +13,5 @@ test('navigation items', async ({ page }) => {
   await expect(page.getByRole('navigation')).toContainText('guide');
   await expect(page.getByRole('navigation')).toContainText('redirect');
   await expect(page.getByRole('navigation')).toContainText('app1');
+  await expect(page.getByRole('navigation')).toContainText('app2');
 });

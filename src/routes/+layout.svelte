@@ -21,6 +21,8 @@ let { children } = $props();
 		<a href="/redirect">redirect</a>
 		•
 		<a href="/app1">app1</a>
+		•
+		<a href="/app2">app2</a>
 	</nav>
 </header>
 
