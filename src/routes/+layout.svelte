@@ -16,7 +16,7 @@ let { children } = $props();
 	<nav>
 		<a href="/">home</a>
 		•
-		<a href="/guide">guide</a>
+		<a href="/markdown-page">markdown-page</a>
 		•
 		<a href="/redirect">redirect</a>
 		•

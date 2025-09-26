@@ -7,4 +7,4 @@
 <hr>
 
 # no markdown here
-<p>but maybe <a href="/guide">here?</a></p>
+<p>but maybe <a href="/markdown-page">here?</a></p>
