@@ -11,13 +11,13 @@ const config = {
 			assets: 'build',
 			fallback: undefined,
 			precompress: false,
-			strict: true
-		})
+			strict: true,
+		}),
 	},
 	preprocess: [mdsvex({
 		extensions: ['.sv.md']
 	})],
-	extensions: ['.svelte', '.sv.md']
+	extensions: ['.svelte', '.sv.md'],
 };
 
 export default config;
