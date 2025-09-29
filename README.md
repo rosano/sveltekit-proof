@@ -60,4 +60,4 @@ Build a production version:
 npm run build
 ```
 
-This will produce a static-site that can be deployed to GitHub Pages and other places.
+This will produce a static-site in `/build` that can be deployed to GitHub Pages and other places.
