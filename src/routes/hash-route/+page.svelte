@@ -9,9 +9,7 @@ const items = [
 
 <h1>hash-route</h1>
 
-{#if $fragment }
 <h2>{ $fragment || 'select route' }</h2>  
-{/if}
 
 {#each items as item }
   {#if $fragment !== `#${ item }`}
