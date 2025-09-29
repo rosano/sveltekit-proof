@@ -30,7 +30,7 @@ Start a development server:
 npm run dev
 ```
 
-Then type `o` + `Enter` or visit http://localhost:5173 in your browser.
+Type `o` + `Enter` or visit http://localhost:5173 in your browser.
 
 ### Test
 
