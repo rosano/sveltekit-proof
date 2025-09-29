@@ -28,6 +28,26 @@ npm run dev
 
 Then type `o` + `Enter` or visit http://localhost:5173 in your browser.
 
+### Test
+
+Run logic tests:
+
+```sh
+npm run test:unit
+```
+
+Run interface tests:
+
+```sh
+npm run test:e2e
+```
+
+Run all tests:
+
+```sh
+npm run test
+```
+
 ### Deploy
 
 Build a production version:
