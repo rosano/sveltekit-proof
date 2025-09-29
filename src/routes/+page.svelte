@@ -8,3 +8,7 @@
 
 # no markdown here
 <p>but maybe <a href="/markdown-page">here?</a></p>
+
+<hr>
+
+<small><a href="https://github.com/rosano/svp">open-source</a></small>

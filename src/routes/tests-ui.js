@@ -17,5 +17,14 @@ test('navigation items', ({ page }) =>
   ])
 );
 
-test('open-source', ({ page }) => {
-});
+test.describe('open-source', () => {
+
+  test('text', ({ page }) =>
+    expect(page.locator('small a')).toContainText('open-source')
+  );
+
+  test('href', ({ page }) =>
+    expect(page.locator('small a')).toHaveAttribute('href', 'https://github.com/rosano/svp')
+  );
+
+})
