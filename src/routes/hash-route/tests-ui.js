@@ -2,11 +2,11 @@ import { expect, test } from '@playwright/test';
 
 test.beforeEach(({ page }) => page.goto('/hash-route'));
 
-test('page has h1', ({ page }) =>
+test('h1', ({ page }) =>
 	expect(page.locator('h1')).toContainText('hash-route')
 );
 
-test('page has h2', ({ page }) =>
+test('h2', ({ page }) =>
 	expect(page.locator('h2')).toContainText('select route')
 );
 
@@ -14,9 +14,16 @@ test('page has h2', ({ page }) =>
   'alfa',
   'bravo',
   'charlie',
-].forEach(e => test('click ' + e, async ({ page }) => {
-	await page.locator('button.' + e).click();
+].forEach(e => test.describe(e, () => {
 
-	expect(page.locator('h2')).toContainText('#' + e)
-	expect(new URL(page.url()).hash).toBe('#' + e)
+	test.beforeEach(({ page }) => page.locator('button.' + e).click())
+
+	test('h1', ({ page }) =>
+		expect(page.locator('h2')).toContainText('#' + e)
+	);
+
+	test('hash', ({ page }) =>
+		expect(new URL(page.url()).hash).toBe('#' + e)
+	);
+
 }));

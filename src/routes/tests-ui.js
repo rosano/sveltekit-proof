@@ -2,11 +2,11 @@ import { expect, test } from '@playwright/test';
 
 test.beforeEach(({ page }) => page.goto('/'));
 
-test('heading', ({ page }) =>
+test('h1', ({ page }) =>
 	expect(page.locator('h1')).toContainText('svp')
 );
 
-test('navigation items', ({ page }) =>
+test('navigation', ({ page }) =>
   expect(page.locator('nav a')).toHaveText([
     'home',
     'markdown-page',

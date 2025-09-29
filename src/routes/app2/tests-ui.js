@@ -2,15 +2,15 @@ import { expect, test } from '@playwright/test';
 
 test.beforeEach(({ page }) => page.goto('/app2'));
 
-test('page has h1', ({ page }) => 
+test('h1', ({ page }) => 
 	expect(page.locator('h1')).toContainText('SPA')
 );
 
-test('page has button', ({ page }) => 
+test('button', ({ page }) => 
 	expect(page.locator('button')).toContainText('Remove first thing')
 );
 
-test('page has .thing', ({ page }) => 
+test('.thing', ({ page }) => 
 	expect(page.locator('.thing')).toHaveCount(5)
 );
 
