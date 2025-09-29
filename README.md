@@ -4,6 +4,8 @@ Basic implementations of layers used in my app stack.
 
 ## Architecture
 
+| layer | description |
+| - | - |
 | [SvelteKit](https://svelte.dev/docs/kit) | framework, UI components, routing and redirects, `vite`-fast builds |
 | + [adapter-static](https://svelte.dev/docs/kit/adapter-static) | build as static site |
 | + [mdsvex](https://mdsvex.pngwn.io/docs) | markdown content in `.md` files |
