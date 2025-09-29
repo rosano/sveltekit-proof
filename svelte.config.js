@@ -9,7 +9,7 @@ const config = {
 			// these options are set automatically — see below
 			pages: 'build',
 			assets: 'build',
-			fallback: undefined,
+			fallback: '200.html', // may differ from host to host
 			precompress: false,
 			strict: true,
 		}),

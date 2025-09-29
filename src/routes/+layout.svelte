@@ -23,6 +23,8 @@ let { children } = $props();
 		<a href="/app1">app1</a>
 		•
 		<a href="/app2">app2</a>
+		•
+		<a href="/hash-route">hash-route</a>
 	</nav>
 </header>
 
