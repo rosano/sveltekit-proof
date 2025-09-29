@@ -1,13 +1,13 @@
-<h1>svp</h1>
+<h1>svp (<a href="https://svelte.dev/docs/kit" target="_blank">SvelteKit</a> Proof)</h1>
 
-<p>Finding my building blocks for app development.</p>
+<p>Basic implementations of layers used in my app stack.</p>
 
-<p>Docs at <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a></p>
-
-<hr>
-
-# no markdown here
-<p>but maybe <a href="/markdown-page">here?</a></p>
+<ul>
+	<li><a href="/markdown-page">Markdown content</a></li>
+	<li><a href="/redirect">redirects</a></li>
+	<li>multiple app pages: <a href="/app1">app1</a>, <a href="/app2">app2</a></li>
+	<li><a href="/hash-route">route-based hashing on specific pages</a></li>
+</ul>
 
 <hr>
 

@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test';
 test.beforeEach(({ page }) => page.goto('/'));
 
 test('h1', ({ page }) =>
-	expect(page.locator('h1')).toContainText('svp')
+	expect(page.locator('h1')).toContainText('svp (SvelteKit Proof)')
 );
 
 test('navigation', ({ page }) =>
