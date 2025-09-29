@@ -1,38 +1,39 @@
-# sv
+# svp (SvelteKit Proof)
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Basic implementations of layers used in my app stack.
 
-## Creating a project
+## Architecture
 
-If you're seeing this, you've probably already done this step. Congrats!
+| [SvelteKit](https://svelte.dev/docs/kit) | framework, UI components, routing and redirects, `vite`-fast builds |
+| + [adapter-static](https://svelte.dev/docs/kit/adapter-static) | build as static site |
+| + [mdsvex](https://mdsvex.pngwn.io/docs) | markdown content in `.md` files |
+| [Vitest](https://vitest.dev) | logic tests |
+| [Playwright](https://playwright.dev) | interface tests |
+
+## Development
+
+Install [Node.js and npm](https://nodejs.org/en/download/), then install the dependencies:
 
 ```sh
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+npm i
 ```
 
-## Developing
+### Run
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Start a development server:
 
 ```sh
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+Then type `o` + `Enter` or visit http://localhost:5173 in your browser.
 
-To create a production version of your app:
+### Deploy
+
+Build a production version:
 
 ```sh
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+This will produce a static-site that can be deployed to GitHub Pages and other places.

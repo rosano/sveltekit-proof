@@ -1,4 +1,4 @@
-<h1>test-sveltekit</h1>
+<h1>svp</h1>
 
 <p>Finding my building blocks for app development.</p>
 

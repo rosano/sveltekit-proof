@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test';
 test.beforeEach(({ page }) => page.goto('/'));
 
 test('home page has expected h1', ({ page }) =>
-	expect(page.locator('h1')).toContainText('test-sveltekit')
+	expect(page.locator('h1')).toContainText('svp')
 );
 
 test('navigation items', async ({ page }) => {
