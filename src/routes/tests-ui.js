@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 test.beforeEach(({ page }) => page.goto('/'));
 
-test('home page has expected h1', ({ page }) =>
+test('heading', ({ page }) =>
 	expect(page.locator('h1')).toContainText('svp')
 );
 
