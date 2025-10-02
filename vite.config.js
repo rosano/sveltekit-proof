@@ -16,4 +16,9 @@ export default defineConfig({
 			},
 		],
 	},
+	server: {
+		allowedHosts: [
+			'loc.sv',
+		]
+	}
 });
