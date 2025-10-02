@@ -26,6 +26,7 @@ const mod = {
 	// precache project assets
 	install: async () => (await caches.open(CACHE)).addAll(ASSETS),
 	
+	// clear old cache
 	activate: async () => await Promise.all(Object.keys(await caches.keys()).filter(e => e !== CACHE).map(caches.delete)),
 
 	async respond (event) {

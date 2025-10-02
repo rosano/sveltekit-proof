@@ -8,7 +8,7 @@ https://svp.github.rosano.ca
 
 | layer | description |
 | - | - |
-| [SvelteKit](https://svelte.dev/docs/kit) | framework, UI components, routing and redirects, `vite`-fast builds |
+| [SvelteKit](https://svelte.dev/docs/kit) | framework, UI components, routing and redirects, navigation without HTTP requests, `vite`-fast builds, `service-worker.js` automatic registration |
 | + [adapter-static](https://svelte.dev/docs/kit/adapter-static) | build as static site |
 | + [mdsvex](https://mdsvex.pngwn.io/docs) | markdown content in `.md` files |
 | [Vitest](https://vitest.dev) | logic or unit tests in `tests.js` files |
