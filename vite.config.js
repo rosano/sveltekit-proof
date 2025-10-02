@@ -12,8 +12,8 @@ export default defineConfig({
 					name: 'server',
 					environment: 'node',
 					include: ['src/**/tests.{js,ts}'],
-				}
-			}
-		]
-	}
+				},
+			},
+		],
+	},
 });
