@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test';
 test.beforeEach(({ page }) => page.goto('/'));
 
 test('h1', ({ page }) =>
-	expect(page.locator('h1')).toContainText('svp (SvelteKit Proof)')
+	expect(page.locator('h1')).toHaveText('svp (SvelteKit Proof)')
 );
 
 test('navigation', ({ page }) =>
@@ -20,7 +20,7 @@ test('navigation', ({ page }) =>
 test.describe('open-source', () => {
 
   test('text', ({ page }) =>
-    expect(page.locator('small a')).toContainText('open-source')
+    expect(page.locator('small a')).toHaveText('open-source')
   );
 
   test('href', ({ page }) =>

@@ -3,11 +3,11 @@ import { expect, test } from '@playwright/test';
 test.beforeEach(({ page }) => page.goto('/app2'));
 
 test('h1', ({ page }) => 
-	expect(page.locator('h1')).toContainText('SPA')
+	expect(page.locator('h1')).toHaveText('SPA')
 );
 
 test('button', ({ page }) => 
-	expect(page.locator('button')).toContainText('Remove first thing')
+	expect(page.locator('button')).toHaveText('Remove first thing')
 );
 
 test('.thing', ({ page }) => 

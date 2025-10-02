@@ -7,23 +7,23 @@ test('manifest', ({ page }) =>
 );
 
 test('h1', ({ page }) =>
-	expect(page.locator('h1')).toContainText('SPA')
+	expect(page.locator('h1')).toHaveText('SPA')
 );
 
 test.describe('button', () => {
 
 	test('text', ({ page }) =>
-		expect(page.locator('button')).toContainText('Clicked 0 times')
+		expect(page.locator('button')).toHaveText('Clicked 0 times')
 	);
 
 	test('click', async ({ page }) => {
 		page.locator('button').click();
 
-		await expect(page.locator('button')).toContainText('Clicked 1 time');
+		await expect(page.locator('button')).toHaveText('Clicked 1 time');
 
 		await page.locator('button').click();
 
-		await expect(page.locator('button')).toContainText('Clicked 2 times');
+		await expect(page.locator('button')).toHaveText('Clicked 2 times');
 	});
 
 });
