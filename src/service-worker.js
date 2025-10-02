@@ -41,6 +41,7 @@ const mod = {
 		}
 
 		// try network first, and fall back to cache if offline
+		// (but if our whole app is cached this will probably never happen)
 		try {
 			const response = await fetch(event.request);
 
