@@ -17,13 +17,14 @@ const self = /** @type {ServiceWorkerGlobalScope} */ (/** @type {unknown} */ (gl
 
 const CACHE = `cache-${version}`;
 const ASSETS = [
-	...build, // the app itself
-	...files  // everything in `static`
+	...build,
+	...files, // everything in `static`
 ];
 
 const mod = {
 	
-	install: async () => await (await caches.open(CACHE)).addAll(ASSETS),
+	// precache project assets
+	install: async () => (await caches.open(CACHE)).addAll(ASSETS),
 	
 	activate: async () => await Promise.all(Object.keys(await caches.keys()).filter(e => e !== CACHE).map(caches.delete)),
 
