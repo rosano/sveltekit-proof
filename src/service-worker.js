@@ -15,40 +15,19 @@ import { build, files, version } from '$service-worker';
 // This gives `self` the correct types
 const self = /** @type {ServiceWorkerGlobalScope} */ (/** @type {unknown} */ (globalThis.self));
 
-// Create a unique cache name for this deployment
 const CACHE = `cache-${version}`;
-
 const ASSETS = [
 	...build, // the app itself
 	...files  // everything in `static`
 ];
 
-self.addEventListener('install', (event) => {
-	// Create a new cache and add all files to it
-	async function addFilesToCache() {
-		const cache = await caches.open(CACHE);
-		await cache.addAll(ASSETS);
-	}
+const mod = {
+	
+	install: async () => await (await caches.open(CACHE)).addAll(ASSETS),
+	
+	activate: async () => await Promise.all(Object.keys(await caches.keys()).filter(e => e !== CACHE).map(caches.delete)),
 
-	event.waitUntil(addFilesToCache());
-});
-
-self.addEventListener('activate', (event) => {
-	// Remove previous cached data from disk
-	async function deleteOldCaches() {
-		for (const key of await caches.keys()) {
-			if (key !== CACHE) await caches.delete(key);
-		}
-	}
-
-	event.waitUntil(deleteOldCaches());
-});
-
-self.addEventListener('fetch', (event) => {
-	// ignore POST requests etc
-	if (event.request.method !== 'GET') return;
-
-	async function respond() {
+	async respond (event) {
 		const url = new URL(event.request.url);
 		const cache = await caches.open(CACHE);
 
@@ -61,13 +40,11 @@ self.addEventListener('fetch', (event) => {
 			}
 		}
 
-		// for everything else, try the network first, but
-		// fall back to the cache if we're offline
+		// try network first, and fall back to cache if offline
 		try {
 			const response = await fetch(event.request);
 
-			// if we're offline, fetch can return a value that is not a Response
-			// instead of throwing - and we can't pass this non-Response to respondWith
+			// sometimes fetch doesn't return a `Response`
 			if (!(response instanceof Response)) {
 				throw new Error('invalid response from fetch');
 			}
@@ -84,11 +61,24 @@ self.addEventListener('fetch', (event) => {
 				return response;
 			}
 
-			// if there's no cache, then just error out
-			// as there is nothing we can do to respond to this request
+			// nothing more can do to respond to this request
 			throw err;
 		}
-	}
+	},
 
-	event.respondWith(respond());
-});
+	fetch (event) {
+		// ignore POST requests, etc…
+		if (event.request.method !== 'GET'){
+			return;
+		}
+
+		event.respondWith(mod.respond(event));
+	},
+
+};
+
+self.addEventListener('install', (event) => event.waitUntil(mod.install()));
+
+self.addEventListener('activate', (event) => event.waitUntil(mod.activate()));
+
+self.addEventListener('fetch', mod.fetch);
