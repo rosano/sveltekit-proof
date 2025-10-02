@@ -1,0 +1,17 @@
+{
+  "name": "svp-spa",
+  "short_name": "svpsn",
+  "start_url": "/app1/",
+  "display": "standalone",
+  "background_color": "white",
+  "theme_color": "white",
+  "icons":
+  [
+    {
+      "src": "https://...",
+      "sizes": "600x600",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
