@@ -11,8 +11,8 @@ https://svp.github.rosano.ca
 | [SvelteKit](https://svelte.dev/docs/kit) | framework, UI components, routing and redirects, `vite`-fast builds |
 | + [adapter-static](https://svelte.dev/docs/kit/adapter-static) | build as static site |
 | + [mdsvex](https://mdsvex.pngwn.io/docs) | markdown content in `.md` files |
-| [Vitest](https://vitest.dev) | logic tests |
-| [Playwright](https://playwright.dev) | interface tests |
+| [Vitest](https://vitest.dev) | logic or unit tests in `tests.js` files |
+| [Playwright](https://playwright.dev) | interface tests in `tests-ui.js` files |
 
 ## Development
 
