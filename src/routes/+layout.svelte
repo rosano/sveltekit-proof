@@ -1,4 +1,5 @@
 <script>
+import 'normalize.css';
 import favicon from '$lib/assets/favicon.svg';
 
 import { page } from '$app/state';
