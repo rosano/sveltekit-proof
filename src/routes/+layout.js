@@ -4,6 +4,7 @@ export const trailingSlash = 'always';
 /** @type {import('./$types').LayoutLoad} */
 export function load() {
 	return {
+		title: 'svp (SvelteKit Proof)',
 		navigation: [
 			{ path: '/', title: 'home' },
 			{ path: '/markdown-page', title: 'markdown-page' },

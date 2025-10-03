@@ -2,6 +2,10 @@ import { expect, test } from '@playwright/test';
 
 test.beforeEach(({ page }) => page.goto('/'));
 
+test('title', async ({ page }) =>
+  expect(await page.title()).toEqual('svp (SvelteKit Proof)')
+);
+
 test('h1', ({ page }) =>
 	expect(page.locator('h1')).toHaveText('svp (SvelteKit Proof)')
 );
