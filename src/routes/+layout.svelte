@@ -6,6 +6,8 @@ let { children, data } = $props();
 </script>
 
 <svelte:head>
+	<meta name="viewport" content="{ page.data.viewport || 'width=device-width, initial-scale=1' }" />
+	
 	<link rel="icon" href={favicon} />
 	<title>{ page.data.title }</title>
 </svelte:head>
