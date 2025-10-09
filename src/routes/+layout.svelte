@@ -2,7 +2,7 @@
 import 'normalize.css';
 import favicon from '$lib/assets/favicon.svg';
 
-import { page } from '$app/state';
+import { page, updated } from '$app/state';
 let { children, data } = $props();
 </script>
 
@@ -22,3 +22,15 @@ let { children, data } = $props();
 </header>
 
 {@render children?.()}
+
+{#if updated.current}
+	<div class="toast">
+		<p>
+			A new version of the app is available
+
+			<button onclick={() => location.reload()}>
+				reload the page
+			</button>
+		</p>
+	</div>
+{/if}
