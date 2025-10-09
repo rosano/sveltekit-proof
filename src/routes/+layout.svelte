@@ -25,12 +25,7 @@ let { children, data } = $props();
 
 {#if updated.current}
 	<div class="toast">
-		<p>
-			A new version of the app is available
-
-			<button onclick={() => location.reload()}>
-				reload the page
-			</button>
-		</p>
+		<p>A new version of the app is available</p>
+		<button onclick={() => location.reload()}>reload the page</button>
 	</div>
 {/if}
